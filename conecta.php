@@ -2,7 +2,7 @@
 $bdServidor = "localhost";
 $bdUsuario = "root";
 $bdSenha = "";
-$bdBanco = "produtos";
+$bdBanco = "usuario";
 
 $conexao = mysqli_connect($bdServidor, $bdUsuario, $bdSenha, $bdBanco);
 
