@@ -1,40 +1,48 @@
 <?php
-
+include("conecta.php");
 ?>
+
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ínicio</title>
+    <title>Produtos</title>
 </head>
 <body>
-   <form method="POST">
-    <fieldset>
-        <legend><h1>
-            Registrar Usuario
-        </h1></legend>
-        Email: <input type="text" name="email"><br>
-        Senha: <input type="text" name="senha">
-    </fieldset>
-    <input type="submit" value="Registrar">
-   </form>
+    <fieldset><legend><h1>Lista de Usuarios
+    </h1></legend>
+
+    <table border="1">
+  <tr>
+    <th> Email </th>
+    <th> Senha </th>
+  </tr>
+
+  <tr>
+      <td><?php
+    $sql = "SELECT email FROM usuario WHERE email=`jonas.2022310916@aluno.iffar.edu.br`";
+  $resultado = mysqli_query($conexao, $sql);
+  $dados = mysqli_fetch_assoc($resultado);
+
+  echo ''.$dados['email'].'';
+  ?>
+  </td>
+    <td><?php
+    $sql = "SELECT senha FROM usuario WHERE email=`jonas.2022310916@aluno.iffar.edu.br`";
+  $resultado = mysqli_query($conexao, $sql);
+  $dados = mysqli_fetch_assoc($resultado);
+
+  echo ''.$dados['senha'].'';
+  ?></td>
+  <td><a href="excluir.php">Excluir</a></td>
+</tr>
+
+  <tr>
+    <td>
+</table>
+  </fieldset>
+
 </body>
 </html>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // verifica se o formulário foi enviado
-
-    if (isset($_POST["email"]) && isset($_POST["senha"])){
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-    $sql = "INSERT INTO usuario(email, senha) VALUES ('$email','$senha')";
-    }
-
-
-include("conecta.php");
-
-
-mysqli_query($conexao, $sql);
-}
-?>
