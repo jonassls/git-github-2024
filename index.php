@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["email"]) && isset($_POST["senha"])){
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-    $sql = "INSERT INTO produtos(email, senha) VALUES ('$email','$senha')";
+    $sql = "INSERT INTO usuario(email, senha) VALUES ('$email','$senha')";
     }
 
 
