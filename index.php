@@ -25,10 +25,10 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // verifica se o formulário foi enviado
 
-    if (isset($_POST["Nome"]) && isset($_POST["Quantidade"])){
-        $Nome = $_POST['Nome'];
-        $Quantidade = $_POST['Quantidade'];
-    $sql = "INSERT INTO produtos(Nome, Quantidade) VALUES ('$Nome','$Quantidade')";
+    if (isset($_POST["email"]) && isset($_POST["senha"])){
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+    $sql = "INSERT INTO produtos(email, senha) VALUES ('$email','$senha')";
     }
 
 
